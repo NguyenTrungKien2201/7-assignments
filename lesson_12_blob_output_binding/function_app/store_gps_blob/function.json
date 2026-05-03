@@ -1,0 +1,21 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "event",
+      "direction": "in",
+      "eventHubName": "",
+      "connection": "IOT_HUB_CONNECTION_STRING",
+      "consumerGroup": "$Default",
+      "cardinality": "one"
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outputBlob",
+      "path": "gps-data/{rand-guid}.json",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
